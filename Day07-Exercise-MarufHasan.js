@@ -76,7 +76,8 @@ Object.entries(Arrinput).forEach((entry) => {
 });
 console.log(NewArrayinput);
 
-//No 5 function factorial number
+//No 5 function factorial number tambah lagi
+
 function factorial(number) {
   if (number < 0) return -1;
   else if (number == 0) return 1;
