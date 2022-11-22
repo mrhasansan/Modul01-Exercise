@@ -1,68 +1,88 @@
 // soal no 1
-var celsius = 100;
-var fahrenheit = (180 / 100) * celsius + 32;
-console.log(` suhu ${celsius} Celsius sama dengan ${fahrenheit} fahrenheid`);
+// Write a code to convert celsius to fahrenheit.
+function suhu(celcius) {
+  var fahrenheit = (180 / 100) * celcius + 32;
+  return fahrenheit;
+}
+console.log(suhu(100));
 
 // soal no 2
-var bil = 11;
-if (bil % 2 == 0) {
-  console.log(`bilangan ${bil} adalah genap`);
-} else console.log(`bilangan ${bil} adalah ganjil`);
+// Write a code to check whether the number is odd or even
+function cekGenapGanjil(bil) {
+  if (bil % 2 == 0) {
+    return `bilangan ${bil} adalah genap`;
+  } else {
+    return `bilangan ${bil} adalah ganjil`;
+  }
+}
+console.log(cekGenapGanjil(22));
 
 // soal no 3
-
-const bilPilihan = 4;
-let apakahPrima = true;
-
-if (bilPilihan === 1) {
-  console.log("1 adalah bukan bilangan prima.");
-} else if (bilPilihan > 1) {
-  for (let i = 2; i < bilPilihan; i++) {
-    if (bilPilihan % i == 0) {
-      apakahPrima = false;
-      break;
-    }
-  }
-
-  if (apakahPrima) {
-    console.log(`${bilPilihan} adalah bilangan prima`);
+// Write a code to check whether the number is prime number or not
+// Bilangan prima adalah bilangan asli lebih dari 1
+// yang bukan hasilkali dari dua bilangan asli yang lebih kecil.
+function primeTest(num) {
+  if (num <= 1) {
+    return "bukan prima";
+  } else if (num === 2) {
+    return "prima";
   } else {
-    console.log(`${bilPilihan} adalah bukan bilangan prima`);
+    for (x = 2; x < num; x++) {
+      if (num % x === 0) {
+        return "bukan prima";
+      }
+    }
+    return "prima";
   }
 }
-
-// check if number is less than 1
-else {
-  console.log("The number is not a prime number.");
-}
+console.log(primeTest(67));
 
 // soal no 4
-var sum = 10;
-var hasilsum = 0;
-for (i = 0; i <= sum; i++) {
-  hasilsum += i;
+// Write a code to find the sum of the numbers 1 to N.
+// ○ Example : 5 → 1 + 2 + 3 + 4 + 5 = 15
+function sumTotal(num) {
+  var hasilsum = 0;
+  for (i = 0; i <= num; i++) {
+    hasilsum += i;
+  }
+  return hasilsum;
 }
-console.log(
-  `total penjumlahan semua bilangan 1 sampai ${sum} adalah ${hasilsum}`
-);
+console.log(sumTotal(10));
 
 // no 5
-var fact = 10;
-var hasilfact = 1;
-for (i = 1; i <= fact; i++) {
-  hasilfact *= i;
+// Write a code to find factorial of a number.
+function faktorial(num) {
+  var hasilfact = 1;
+  for (i = 1; i <= num; i++) {
+    hasilfact *= i;
+  }
+  return hasilfact;
 }
-console.log(`Faktorial dari bilangan ${fact} adalah ${hasilfact}`);
+console.log(faktorial(5));
 
 // no 6
-const fibonanci = (n) => {
-  var a = 0,
-    b = 1,
-    c = n;
-  for (var i = 2; i <= n; i++) {
-    c = a + b;
-    a = b = c;
+// Write a code to print the first N fibonacci numbers.
+
+var fibonanci = function (n) {
+  if (n == 1 || n == 0) return 1; // our base cases
+
+  let u1 = 1;
+  let u2 = 2;
+
+  for (let i = 3; i <= n; i++) {
+    let u3 = u1 + u2;
+    u1 = u2;
+    u2 = u3;
   }
-  return c;
+  return u2;
 };
-console.log(fibonanci);
+console.log(fibonanci(19));
+
+module.exports = {
+  suhu,
+  cekGenapGanjil,
+  primeTest,
+  sumTotal,
+  faktorial,
+  fibonanci,
+};
