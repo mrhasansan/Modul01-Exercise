@@ -7,6 +7,7 @@ const {
   fibonanci,
 } = require("./Day02-Exercise-MarufHasan.js");
 
+//
 test("Test suhu C ke F function", () => {
   // Correct
   expect(suhu(100)).toBe(212);
@@ -31,3 +32,5 @@ test("Test fibonannci function", () => {
   // Correct
   expect(fibonanci(19)).toBe(6765);
 });
+
+//
