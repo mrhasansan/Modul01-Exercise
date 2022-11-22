@@ -1,39 +1,65 @@
 //no 1
-
-var sisi = 100;
-var areaPersegi = Math.pow(sisi, 2);
-var hasilAreaPersegi = `Hasil luas persegi dengan sisi ${sisi} satuan adalah ${areaPersegi} satuanpersegi`;
-console.log(hasilAreaPersegi);
+// Write a code to find area of rectangle.
+function luasPersegi(sisi) {
+  var areaPersegi = Math.pow(sisi, 2);
+  console.log(areaPersegi);
+}
+luasPersegi(8);
 
 //no 2
-var kelilingPersegi = 4 * sisi;
-var hasilKelilingPersegi = `Hasil Keliling persegi dengan sisi ${sisi} satuan adalah ${kelilingPersegi} satuan`;
-console.log(hasilKelilingPersegi);
+// Write a code to find perimeter of rectangle.
+function kelPer(sisi) {
+  var kelilingPersegi = 4 * sisi;
+  console.log(kelilingPersegi);
+}
+kelPer(100);
 
 //no 3
-var jari = 90;
-var diameter = jari * 2;
-var hasilDiameter = `Dimater lingkaran dengan jari-jari ${jari} satuan adalah ${diameter} satuan`;
-console.log(hasilDiameter);
-var kelilingLingkaran = 2 * (22 / 7) * jari;
-var hasilKelilingLingkaran = `keliling lingkaran dengan jari-jari ${jari} satuan adalah ${kelilingLingkaran} satuan`;
-console.log(hasilKelilingLingkaran);
-var luasLingkaran = (22 / 7) * Math.pow(jari, 2);
-var hasilLuasLingkaran = `Luas lingkaran dengan jari-jari ${jari} satuan adalah ${kelilingLingkaran} satuan`;
-console.log(hasilLuasLingkaran);
+//Write a code to find diameter, circumference and area of a circle.
+function diameter(jari) {
+  var diameter = jari * 2;
+  console.log(diameter);
+}
+function kelilingLingkaran(jari) {
+  var kelilingLingkaran = 2 * (22 / 7) * jari;
+  console.log(kelilingLingkaran);
+}
+function luaslingkaran(jari) {
+  var luasLingkaran = (22 / 7) * Math.pow(jari, 2);
+  console.log(luasLingkaran);
+}
+
+diameter(7);
+kelilingLingkaran(7);
+luaslingkaran(7);
 
 //no 4
-var sudutA = 76;
-var sudutB = 10;
-var sudutC = 180 - (sudutA + sudutB);
-var HasilSudut = `Besar sudut C segitiga ABC dengan sudut A = ${sudutA} derajat dan sudut B = ${sudutB} derajat adalah ${sudutC} derajat`;
-console.log(HasilSudut);
+// Write a code to find angles of triangle if two angles are given
+function sudut(sudutA, sudutB) {
+  var sudutC = 180 - (sudutA + sudutB);
+  console.log(sudutC);
+}
+sudut(34, 90);
 
-//no 5
-var totalhari = 1900;
-var tahun = Math.floor(totalhari / 365);
-var sisahari = totalhari % 365;
-var bulan = Math.floor(sisahari / 30);
-var hari = sisahari % 30;
-var hasil = `Total  ${totalhari}  hari sama dengan ${tahun} tahun, ${bulan} bulan, ${hari} hari`;
-console.log(hasil);
+// no 5
+// te a code to get difference between dates in days.
+function bedahari(date1, date2) {
+  const beda = date2.getTime() - date1.getTime();
+  const totalbedaHari = Math.ceil(beda / (24 * 60 * 60 * 1000));
+  console.log(totalbedaHari);
+}
+const date1 = new Date("2015-08-10");
+const date2 = new Date("2015-08-12");
+bedahari(date1, date2);
+
+//no 6
+function hari(totalhari) {
+  var tahun = Math.floor(totalhari / 365);
+  var sisahari = totalhari % 365;
+  var bulan = Math.floor(sisahari / 30);
+  var hari = sisahari % 30;
+  var hasil = `${totalhari} hari :  ${tahun} tahun, ${bulan} bulan, ${hari} hari`;
+  console.log(hasil);
+}
+
+hari(900);
